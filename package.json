@@ -1,0 +1,29 @@
+{
+  "name": "moneysocket",
+  "version": "0.0.0",
+  "description": "An in-browser JavaScript implementation of the Moneysocket protocol",
+  "main": "moneysocket.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jarret/js-moneysocket.git"
+  },
+  "keywords": [
+    "bitcoin",
+    "lightning-network",
+    "protocol"
+  ],
+  "author": "Jarret Dyrbye",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jarret/js-moneysocket/issues"
+  },
+  "homepage": "https://socket.money",
+  "dependencies": {
+    "aes-js": "^3.1.2",
+    "bech32": "^1.1.4",
+    "bolt11": "^1.2.7"
+  }
+}
