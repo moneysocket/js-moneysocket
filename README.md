@@ -3,7 +3,7 @@ Moneysocket Protocol implemented in JavaScript
 
 This is a library intended to be included in browser apps for consuming and providing Moneysocket connections for driving Lightning Network payments.
 
-- [Homepage](https://socket.money).
+- [Homepage](https://socket.money)
 - [Awesome](https://github.com/moneysocket/awesome-moneysocket)
 - [Twitter](https://twitter.com/moneysocket)
 - [Telegram](https://t.me/moneysocket)
@@ -28,7 +28,7 @@ The NPM package manager can install this library into your project's `node_modul
 
 or by just pointing it to a cloned version on you local filesystem:
 
-`npm install https://github.com/moneysocket/js-moneysocket`
+`npm install /path/to/js-moneysocket`
 
 
 Consumers and Providers
