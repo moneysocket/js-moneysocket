@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jarret/js-moneysocket.git"
+    "url": "git+https://github.com/moneysocket/js-moneysocket.git"
   },
   "keywords": [
     "bitcoin",
@@ -18,7 +18,7 @@
   "author": "Jarret Dyrbye",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jarret/js-moneysocket/issues"
+    "url": "https://github.com/moneysocket/js-moneysocket/issues"
   },
   "homepage": "https://socket.money",
   "dependencies": {
