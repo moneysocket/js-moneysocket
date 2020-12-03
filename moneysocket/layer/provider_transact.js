@@ -17,7 +17,7 @@ class ProviderTransactLayer extends Layer {
 
     setupProviderTransactNexus(below_nexus) {
         var n = new ProviderTransactNexus(below_nexus, this);
-        n.handleinvoicerequest = (function(nexus, bolt11, request_uuid) {
+        n.handleinvoicerequest = (function(nexus, msats, request_uuid) {
             this.handleInvoiceRequest(nexus, msats, request_uuid);
         }).bind(this);
         n.handlepayrequest = (function(nexus, bolt11, request_uuid) {
