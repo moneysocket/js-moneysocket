@@ -6,6 +6,7 @@ moneysocket.Timestamp = require('./moneysocket/utl/timestamp.js').Timestamp;
 moneysocket.BinUtl = require('./moneysocket/utl/bin.js').BinUtl;
 moneysocket.BigSize = require('./moneysocket/utl/bolt/bigsize.js').BigSize;
 moneysocket.UInt64 = require('./moneysocket/utl/uint64.js').UInt64;
+moneysocket.Bolt11 = require('./moneysocket/utl/bolt11.js').Bolt11;
 
 // stack classes
 moneysocket.ProviderStack = require(
