@@ -136,8 +136,8 @@ class Wad {
 
     static clone_msats(wad, new_msats) {
         var rate = wad.getDefactoRate();
-        console.log("rate: " + rate.toString());
-        console.log("new_msats " + new_msats);
+        //console.log("rate: " + rate.toString());
+        //console.log("new_msats " + new_msats);
         if (rate == null) {
             var c = Wad.clone(wad);
             c['msats'] = 0;
@@ -146,12 +146,12 @@ class Wad {
         }
         var new_btc = new_msats / MSATS_PER_BTC;
         var other = rate.other('BTC');
-        console.log("other " + other);
-        console.log("new btc " + new_btc);
+        //console.log("other " + other);
+        //console.log("new btc " + new_btc);
         var [new_units, code] = rate.convert(new_btc, 'BTC');
         console.assert(other == code);
-        console.log("new_units " + new_units);
-        console.log("code " + code);
+        //console.log("new_units " + new_units);
+        //console.log("code " + code);
         return new Wad(new_msats, wad['asset_stable'], new_units,
                        wad['code'], wad['countries'], wad['decimals'],
                        wad['name'], wad['symbol'])
