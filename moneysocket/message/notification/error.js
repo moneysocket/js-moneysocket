@@ -15,7 +15,7 @@ class NotifyError extends MoneysocketNotification {
     }
 
     cryptLevel() {
-        return "CLEAR";
+        return "AES";
     }
 
     static castClass(msg_dict) {

@@ -22,6 +22,7 @@ class ConsumerStack {
         this.onping = null;
         this.oninvoice = null;
         this.onpreimage = null;
+        this.onerror = null;
 
         this.websocket_layer = this.setupOutgoingWebsocketLayer(null);
         this.rendezvous_layer = this.setupOutgoingRendezvousLayer(
@@ -55,6 +56,9 @@ class ConsumerStack {
         }).bind(this);
         l.onpreimage = (function(nexus, preimage, request_reference_uuid) {
             this.onPreimage(nexus, preimage, request_reference_uuid);
+        }).bind(this);
+        l.onerror = (function(nexus, error_msg, request_reference_uuid) {
+            this.onError(nexus, error_msg, request_reference_uuid);
         }).bind(this);
         l.registerAboveLayer(below_layer);
         return l;
@@ -105,6 +109,12 @@ class ConsumerStack {
     onPreimage(transact_nexus, preimage, request_reference_uuid) {
         if (this.onpreimage != null) {
             this.onpreimage(preimage, request_reference_uuid);
+        }
+    }
+
+    onError(transact_nexus, error_msg, request_reference_uuid) {
+        if (this.onerror != null) {
+            this.onerror(error_msg, request_reference_uuid);
         }
     }
 

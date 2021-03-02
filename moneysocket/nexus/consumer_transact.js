@@ -12,6 +12,7 @@ const RequestPay = require("../message/request/pay.js").RequestPay;
 
 const LAYER_NOTIFICATIONS = new Set(["NOTIFY_INVOICE",
                                      "NOTIFY_PREIMAGE",
+                                     "NOTIFY_ERROR",
                                    ]);
 
 class ConsumerTransactNexus extends Nexus {
@@ -20,6 +21,7 @@ class ConsumerTransactNexus extends Nexus {
 
         this.oninvoice = null;
         this.onpreimage = null;
+        this.onerror = null;
     }
 
     ///////////////////////////////////////////////////////////////////////////
@@ -32,10 +34,15 @@ class ConsumerTransactNexus extends Nexus {
             }
         }
         else if (msg['notification_name'] == "NOTIFY_PREIMAGE") {
-            console.log("notify preimage: " + JSON.stringify(msg));
             if (this.onpreimage != null) {
                 this.onpreimage(this, msg['preimage'],
                                 msg['request_reference_uuid']);
+            }
+        }
+        else if (msg['notification_name'] == "NOTIFY_ERROR") {
+            if (this.onerror != null) {
+                this.onerror(this, msg['error_msg'],
+                             msg['request_reference_uuid']);
             }
         }
     }
