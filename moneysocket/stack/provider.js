@@ -161,6 +161,10 @@ class ProviderStack {
         this.nexus.notifyPreimage(preimage, request_reference_uuid);
     }
 
+    sendErrorNotification(error_msg, request_reference_uuid) {
+        this.nexus.notifyError(error_msg, request_reference_uuid);
+    }
+
     //////////////////////////////////////////////////////////////////////////
     // UI calls these:
     //////////////////////////////////////////////////////////////////////////

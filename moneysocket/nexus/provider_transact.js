@@ -9,6 +9,7 @@ const NotifyInvoice = require(
     "../message/notification/invoice.js").NotifyInvoice;
 const NotifyPreimage = require(
     "../message/notification/preimage.js").NotifyPreimage;
+const NotifyError = require("../message/notification/error.js").NotifyError;
 
 
 const LAYER_REQUESTS = new Set(["REQUEST_PAY",
@@ -63,6 +64,10 @@ class ProviderTransactNexus extends Nexus {
 
     notifyPreimage(preimage, request_reference_uuid) {
         this.send(new NotifyPreimage(preimage, null, request_reference_uuid));
+    }
+
+    notifyError(error_msg, request_reference_uuid) {
+        this.send(new NotifyError(error_msg, request_reference_uuid));
     }
 
 }
