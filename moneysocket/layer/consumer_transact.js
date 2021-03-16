@@ -25,6 +25,9 @@ class ConsumerTransactLayer extends Layer {
         n.onpreimage = (function(nexus, preimage, request_reference_uuid) {
             this.onPreimage(nexus, preimage, request_reference_uuid);
         }).bind(this);
+        n.onerror = (function(nexus, error_msg, request_reference_uuid) {
+            this.onError(nexus, error_msg, request_reference_uuid);
+        }).bind(this);
         return n;
     }
 
@@ -53,6 +56,13 @@ class ConsumerTransactLayer extends Layer {
         if (this.onpreimage != null) {
             this.onpreimage(consumer_transact_nexus, preimage,
                             request_reference_uuid);
+        }
+    }
+
+    onError(consumer_transact_nexus, error_msg, request_reference_uuid) {
+        if (this.onerror != null) {
+            this.onerror(consumer_transact_nexus, error_msg,
+                         request_reference_uuid);
         }
     }
 }

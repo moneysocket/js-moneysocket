@@ -15,11 +15,11 @@ class NotifyError extends MoneysocketNotification {
     }
 
     cryptLevel() {
-        return "CLEAR";
+        return "AES";
     }
 
     static castClass(msg_dict) {
-        var c = new NotifyError(msg_dict['err_msg'],
+        var c = new NotifyError(msg_dict['error_msg'],
                                 msg_dict['request_reference_id']);
         Object.keys(msg_dict).forEach(key => {
             c[key] = msg_dict[key];
